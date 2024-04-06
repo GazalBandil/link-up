@@ -1,0 +1,80 @@
+/* SignUpPage.css */
+
+/* SignUpPage.css */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width:100vw;
+    background-color: #202225; /* Discord's dark background color */
+    background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2020/10/discord.png); /* Discord's background color */
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+  .inner-signup-container {
+    /* background-color: #272728;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%; */
+    background: rgba(32, 32, 32, 0.245); /* Glass-like effect */
+    border-radius: 10px;
+    padding: 60px;
+    backdrop-filter: blur(20px); /* Glass blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glass border */
+  }
+  
+  .inner-signup-container h2 { 
+    align-items:center;
+    text-align:center;
+    color: #e0e0e0; /* Discord's primary color */
+    font-size: 35px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    /* border:white 2px solid; */
+   
+  }
+  .signup-form {
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    width: 300px;
+    /* border:white 2px solid; */
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4f545c; /* Discord's input field border color */
+    border-radius: 5px;
+    background-color: #36393f; /* Discord's input field background color */
+    color: white; /* Text color */
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="tel"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Placeholder color */
+  }
+  
+  .signup-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2655ff; /* Discord's primary button color */
+    color: white; /* Button text color */
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background-color: #1c317f; /* Button color on hover */
+  }
+  
