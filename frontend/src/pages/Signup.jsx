@@ -19,10 +19,34 @@ const SignUpPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add your sign-up logic here
+  //   console.log(formData);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your sign-up logic here
-    console.log(formData);
+    try {
+      const response = await fetch('http://localhost:3000/user/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to sign up');
+      }
+
+     
+      const data = await response.json();
+      console.log(data); 
+
+     
+    } catch (error) {
+      console.error('Error:', error);
+    
+    }
   };
 
   return (
