@@ -1,0 +1,67 @@
+.top-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    width:100vw;
+
+  }
+  
+  .left-side h1 {
+    margin: 0;
+  }
+  
+  .center ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .center li {
+    margin-right: 20px;
+  }
+  
+  .right-side {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-profile button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #7289da;
+    border-radius: 5px;
+  }
+  
+  .dropdown ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dropdown li {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .dropdown li:hover {
+    background-color: #4e5c90;
+  }
+  
