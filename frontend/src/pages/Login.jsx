@@ -18,12 +18,35 @@ export default function App() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Handle login logic here
+  //   console.log('Email:', email);
+  //   console.log('Password:', password);
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
+    try {
+      const response = await fetch('http://localhost:3000/user/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+else {
+  console.log("success");
+}
+      // Handle successful login, such as redirecting to another page
+      // history.push('/dashboard');
+    } catch (error) {
+      console.error('Error:', error);
+     
+    }
+ };
 
   return (
     <div className="container">

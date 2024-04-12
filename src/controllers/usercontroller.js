@@ -5,7 +5,13 @@ const Usermodel = require("../module/users");
 const secret_key = "geet";
 
 const signup = async (req, res) => {
-    const { contactNo,email, Name, username, password,} = req.body;
+    const { contactNo, email, name, username, password, confirmPassword, collegeName } = req.body;
+    
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        return res.status(400).json({ message: "Passwords do not match" });
+    }
+
     try {
         // Check existing user
         const existingUser = await Usermodel.findOne({ email: email });
@@ -18,15 +24,14 @@ const signup = async (req, res) => {
 
         // Create user
         const result = await Usermodel.create({
-            contactNo:contactNo,
+            collegeName: collegeName,
+            contactNo: contactNo,
             email: email,
-            Name: Name,
+            name: name,
             username: username,
             password: hashedpassword,
-        
+            confirmPassword: hashedpassword,
         });
-        // Log the created user data to console
-        console.log("User created:", result);
 
         // Generate token
         const token = jwt.sign({ email: email, id: result._id }, secret_key);
@@ -37,9 +42,9 @@ const signup = async (req, res) => {
         console.log(error);
         res.status(500).json({ message: "Internal server error" });
     }
-
-
 };
+
+
 const signin = async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -65,16 +70,4 @@ const signin = async (req, res) => {
     }
 };
 
-
-
-
-
-
-
-
-
-
-
-module.exports = { signup,signin };
-
-
+module.exports = { signup, signin };
