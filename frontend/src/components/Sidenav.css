@@ -1,0 +1,37 @@
+.sidenav {
+    width: 250px;
+    background-color: #36393f;
+    color: white;
+    padding: 20px;
+    height:100vh;
+    
+  }
+  
+  .user-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .groups-joined {
+    margin-top: 20px;
+  }
+  
+  .groups-joined h2 {
+    margin-bottom: 10px;
+  }
+  
+  .groups-joined ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .groups-joined li {
+    margin-bottom: 5px;
+  }
+  
+  .groups-joined li:hover {
+    cursor: pointer;
+    color: #7289da;
+  }
+  

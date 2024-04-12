@@ -5,18 +5,24 @@ import './index.css'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
+import Layout from './Layout.jsx'
 
 
 
 const router=createBrowserRouter([
   {
-    path:'login',
+    path:'/',
     element:<Login/>
   },
   {
     path:'signup',
     element:<Signup/>
+  },
+  {
+    path:'Dashboard',
+    element:<Layout/>
   }
+
 
 
 ])
